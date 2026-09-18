@@ -25,5 +25,8 @@ setup(
     author_email= "mohammadhamid8554@gmail.com",
     version= "0.1.0",
     packages= find_packages(),
-    install_requires=  get_requirements("requirements.txt")
+    install_requires=  get_requirements("requirements.txt"),
+    description= "Machine learning practice project",
+    python_requires = ">3.8"
 )
+
