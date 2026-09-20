@@ -4,8 +4,10 @@ from pathlib import Path
 
 logging.basicConfig(level= logging.INFO)
 
+# Use one project name to build all package and module paths consistently.
 project_name = "ml_project_practice"
 
+# These are the files and folders required by the project skeleton.
 list_of_files = [
 
 
@@ -29,16 +31,17 @@ list_of_files = [
     "setup.py"
 ]
 
-# Looping through list of files:
-
+# Create missing directories and empty files without overwriting existing work.
 for filepath in list_of_files:
     filepath = Path(filepath)
     filedir, filename = os.path.split(filepath)
 
+    # Create the parent folder before trying to create the file inside it.
     if filedir != "":
         os.makedirs(filedir, exist_ok= True)
         logging.info(f"Create Directory: {filedir}")
 
+    # Only create a file when it is missing or completely empty.
     if (not os.path.exists(filepath) or os.path.getsize(filepath) == 0):
         with open(filepath, "w") as f:
             pass

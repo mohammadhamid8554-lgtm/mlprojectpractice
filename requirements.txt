@@ -5,3 +5,8 @@ matplotlib
 scikit-learn
 setuptools
 scipy
+sqlalchemy
+pymysql
+python-dotenv
+-e .
+mysql-connector-python
